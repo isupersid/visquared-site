@@ -21,7 +21,7 @@ Status checked 14 September 2026:
 - [x] `www` is a `CNAME` to `isupersid.github.io`.
 - [x] Cloudflare Email Routing has active MX, SPF, and DKIM records.
 - [x] `support@visquared.org` routes to a verified destination mailbox.
-- [ ] GitHub Pages is still provisioning the TLS certificate. Enable **Enforce HTTPS** after the certificate is available.
+- [x] GitHub Pages has provisioned the TLS certificate and **Enforce HTTPS** is enabled.
 
 ## Local preview
 
@@ -66,7 +66,7 @@ Email Routing forwards inbound mail only. Configure an authorised outbound mail 
 
 ## Launch checklist
 
-- Wait for GitHub Pages to finish provisioning the TLS certificate, then enable **Enforce HTTPS**.
+- Confirm GitHub Pages continues to serve the site over HTTPS and redirect HTTP requests after DNS or domain changes.
 - Test every route on desktop and mobile, including keyboard navigation and visible focus.
 - Verify the $5.99 USD per-TV price, Stripe Managed Payments, explicit first-run telemetry consent, English-only global 1.0 release, support, and refund statements against the released app and production providers.
 - Confirm `support@visquared.org` continues to receive messages and that security-tagged reports reach the right inbox.
