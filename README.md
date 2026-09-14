@@ -69,6 +69,6 @@ Email Routing forwards inbound mail only. Configure an authorised outbound mail 
 
 - Confirm GitHub Pages continues to serve the site over HTTPS and redirect HTTP requests after DNS or domain changes.
 - Test every route on desktop and mobile, including keyboard navigation and visible focus.
-- Confirm the LG Store release-approved payment provider, then verify its checkout disclosure alongside the $5.99 USD per-TV price, explicit first-run telemetry consent, English-only global 1.0 release, support, and refund statements.
+- Confirm the LG Store release-approved payment provider, then verify its checkout disclosure alongside the $5.99 USD per-TV price, final-sale policy and exceptions, explicit first-run telemetry consent, English-only global 1.0 release, and support statements.
 - Confirm `support@visquared.org` continues to receive messages and that security-tagged reports reach the right inbox.
 - **Obtain independent legal review of the privacy policy, terms, and refund policy before launch.** This repository provides operational copy, not legal advice.
