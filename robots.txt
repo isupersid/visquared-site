@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://visquared.org/sitemap.xml
