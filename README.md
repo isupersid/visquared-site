@@ -12,6 +12,17 @@ The site is dependency-free HTML and CSS. Stable pages are available at:
 
 GitHub Actions deploys the repository root to GitHub Pages whenever `main` is updated.
 
+## Deployment status
+
+Status checked 14 September 2026:
+
+- [x] GitHub Pages is enabled with the custom domain `visquared.org`.
+- [x] Cloudflare has all four GitHub Pages apex `A` records and all four `AAAA` records.
+- [x] `www` is a `CNAME` to `isupersid.github.io`.
+- [x] Cloudflare Email Routing has active MX, SPF, and DKIM records.
+- [x] `support@visquared.org` routes to a verified destination mailbox.
+- [ ] GitHub Pages is still provisioning the TLS certificate. Enable **Enforce HTTPS** after the certificate is available.
+
 ## Local preview
 
 From the repository root:
@@ -24,11 +35,11 @@ Open <http://localhost:8080>. Because navigation uses root-relative links for th
 
 ## Cloudflare DNS setup
 
-Complete these steps in the Cloudflare zone for `visquared.org` after GitHub Pages is enabled with the custom domain.
+These records are configured in the Cloudflare zone for `visquared.org`. Keep this section as the reference configuration.
 
 ### Apex records
 
-Create the following records for `@`. Use **DNS only** (grey cloud), especially while GitHub provisions and verifies the TLS certificate.
+The following records for `@` are active. Keep them **DNS only** (grey cloud), especially while GitHub provisions and verifies the TLS certificate.
 
 | Type | Name | Content |
 |---|---|---|
@@ -45,27 +56,18 @@ Remove conflicting `A`, `AAAA`, or `CNAME` records for the apex. Keep unrelated 
 
 ### `www` redirect
 
-1. Create a proxied `CNAME` record: name `www`, target `visquared.org`.
-2. In **Rules > Redirect Rules**, create a single redirect where the hostname equals `www.visquared.org`.
-3. Use a `301` redirect to `https://visquared.org` while preserving the request path and query string. A dynamic target expression can concatenate `https://visquared.org` with `http.request.uri.path`; enable query-string preservation.
-
-The proxied `www` record is used only for Cloudflare's redirect. Keep the apex GitHub Pages records DNS-only.
+The `www` record is configured as a `CNAME` to `isupersid.github.io`. GitHub Pages treats `visquared.org` as the canonical custom domain and redirects `www` requests to it. Keep the apex GitHub Pages records DNS-only.
 
 ### Email routing
 
-1. Open **Email > Email Routing** and enable Email Routing for the zone.
-2. Add and verify a destination mailbox controlled by ViSquared.
-3. Create the custom address `support@visquared.org` and route it to that verified destination.
-4. Accept the Cloudflare-suggested routing DNS records, including its required MX records and SPF TXT record.
-5. Remove or reconcile any conflicting MX/SPF records first. Keep exactly one SPF policy for the apex.
-6. Send a test message to `support@visquared.org` and verify it arrives before launch.
+Cloudflare Email Routing is active with its required MX, SPF, and DKIM records. The custom address `support@visquared.org` routes to a verified destination mailbox. Keep the destination private and test inbound delivery before each production launch.
 
 Email Routing forwards inbound mail only. Configure an authorised outbound mail provider separately if replies must come from `support@visquared.org`; publish that provider's SPF/DKIM/DMARC records without placing credentials in this repository.
 
 ## Launch checklist
 
-- Confirm the Pages custom domain is `visquared.org`, DNS validation succeeds, and **Enforce HTTPS** is enabled.
+- Wait for GitHub Pages to finish provisioning the TLS certificate, then enable **Enforce HTTPS**.
 - Test every route on desktop and mobile, including keyboard navigation and visible focus.
 - Verify the $5.99 USD per-TV price, Stripe Managed Payments, explicit first-run telemetry consent, English-only global 1.0 release, support, and refund statements against the released app and production providers.
-- Confirm `support@visquared.org` can receive messages and that security-tagged reports reach the right inbox.
+- Confirm `support@visquared.org` continues to receive messages and that security-tagged reports reach the right inbox.
 - **Obtain independent legal review of the privacy policy, terms, and refund policy before launch.** This repository provides operational copy, not legal advice.
