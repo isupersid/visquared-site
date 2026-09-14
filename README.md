@@ -22,6 +22,7 @@ Status checked 14 September 2026:
 - [x] Cloudflare Email Routing has active MX, SPF, and DKIM records.
 - [x] `support@visquared.org` routes to a verified destination mailbox.
 - [x] GitHub Pages has provisioned the TLS certificate and **Enforce HTTPS** is enabled.
+- [ ] Finalise the release payment provider after the LG Smart Device Payment contract decision. Public copy remains provider-neutral until then.
 
 ## Local preview
 
@@ -68,6 +69,6 @@ Email Routing forwards inbound mail only. Configure an authorised outbound mail 
 
 - Confirm GitHub Pages continues to serve the site over HTTPS and redirect HTTP requests after DNS or domain changes.
 - Test every route on desktop and mobile, including keyboard navigation and visible focus.
-- Verify the $5.99 USD per-TV price, Stripe Managed Payments, explicit first-run telemetry consent, English-only global 1.0 release, support, and refund statements against the released app and production providers.
+- Confirm the LG Store release-approved payment provider, then verify its checkout disclosure alongside the $5.99 USD per-TV price, explicit first-run telemetry consent, English-only global 1.0 release, support, and refund statements.
 - Confirm `support@visquared.org` continues to receive messages and that security-tagged reports reach the right inbox.
 - **Obtain independent legal review of the privacy policy, terms, and refund policy before launch.** This repository provides operational copy, not legal advice.
