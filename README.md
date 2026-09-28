@@ -14,7 +14,7 @@ GitHub Actions deploys the repository root to GitHub Pages whenever `main` is up
 
 ## Deployment status
 
-Status checked 27 September 2026:
+Status checked 14 September 2026:
 
 - [x] GitHub Pages is enabled with the custom domain `visquared.org`.
 - [x] Cloudflare has all four GitHub Pages apex `A` records and all four `AAAA` records.
