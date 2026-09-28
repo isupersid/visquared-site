@@ -14,7 +14,7 @@ GitHub Actions deploys the repository root to GitHub Pages whenever `main` is up
 
 ## Deployment status
 
-Status checked 14 September 2026:
+Status checked 27 September 2026:
 
 - [x] GitHub Pages is enabled with the custom domain `visquared.org`.
 - [x] Cloudflare has all four GitHub Pages apex `A` records and all four `AAAA` records.
@@ -22,7 +22,7 @@ Status checked 14 September 2026:
 - [x] Cloudflare Email Routing has active MX, SPF, and DKIM records.
 - [x] `support@visquared.org` routes to a verified destination mailbox.
 - [x] GitHub Pages has provisioned the TLS certificate and **Enforce HTTPS** is enabled.
-- [ ] Finalise the release payment provider after the LG Smart Device Payment contract decision. Public copy remains provider-neutral until then.
+- [x] Stripe is the selected third-party provider for the planned $5.99 USD one-time per-TV lifetime unlock after the 14-day fully featured trial.
 
 ## Local preview
 
@@ -69,6 +69,6 @@ Email Routing forwards inbound mail only. Configure an authorised outbound mail 
 
 - Confirm GitHub Pages continues to serve the site over HTTPS and redirect HTTP requests after DNS or domain changes.
 - Test every route on desktop and mobile, including keyboard navigation and visible focus.
-- Confirm the LG Store release-approved payment provider, then verify its checkout disclosure alongside the $5.99 USD per-TV price, final-sale policy and exceptions, explicit first-run telemetry consent, English-only global 1.0 release, and support statements.
+- Verify the Stripe checkout disclosure alongside the $5.99 USD per-TV price, final-sale policy and statutory, applicable provider-policy, duplicate or unauthorised charge, and delivery or activation exceptions; also verify explicit first-run telemetry consent, the English-only global 1.0 release, and support statements.
 - Confirm `support@visquared.org` continues to receive messages and that security-tagged reports reach the right inbox.
 - **Obtain independent legal review of the privacy policy, terms, and refund policy before launch.** This repository provides operational copy, not legal advice.
